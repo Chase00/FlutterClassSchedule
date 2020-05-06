@@ -65,27 +65,11 @@ class HomePage extends StatelessWidget {
               children: <Widget>[
                 new FlatButton(
                     child: Text("Enter As Student"),
-                    color: Colors.blue,
+                    color: Colors.green,
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(
                           builder: (context) => StudentHome()));
                     },
-                )
-              ]
-          ),
-
-          new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                new FlatButton(
-                  child: Text("Enter As Faculty"),
-                  color: Colors.blue,
-                  onPressed: (){
-//                    Navigator.push(context, MaterialPageRoute(
-//                        builder: (context) => StudentHome()));
-                  },
                 )
               ]
           ),

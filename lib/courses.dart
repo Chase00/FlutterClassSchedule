@@ -24,7 +24,7 @@ class ListCourses {
     Courses(name:'Client-Side Scripting', code: 'SDEV 253', desc: 'This is a description', size: 0, max: 20),
     Courses(name:'Application Development', code: 'SDEV 264', desc: 'This is a description', size: 0, max: 20),
     Courses(name:'Java Development', code: 'SDEV 200', desc: 'This is a description', size: 0, max: 20),
-    Courses(name:'Python Development', code: 'SDEV 203', desc: 'This is a description', size: 0, max: 20),
+    Courses(name:'Python Development', code: 'SDEV 203', desc: 'snek.', size: 0, max: 20),
     Courses(name:'C# Development', code: 'SDEV 204', desc: 'This is a description', size: 0, max: 20),
     Courses(name:'C++ Development', code: 'SDEV 202', desc: 'This is a description', size: 0, max: 20),
   ];

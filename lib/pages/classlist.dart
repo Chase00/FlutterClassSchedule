@@ -20,7 +20,7 @@ class ClassList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Class List"),
+        title: Text("Class List"), //s
         backgroundColor: Colors.green[400],
       ),
       backgroundColor: Colors.white,
