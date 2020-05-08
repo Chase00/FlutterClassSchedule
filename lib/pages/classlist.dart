@@ -10,11 +10,10 @@ import 'classinfo.dart';
 // ignore: must_be_immutable
 class ClassList extends StatelessWidget {
 
-//  final String classlist;
-//
-//  const ClassList({Key key, this.classlist}) : super(key: key);
+final String classlist;
+ClassList({Key key, this.classlist}) : super(key: key);
 
-  ListCourses course = ListCourses();
+ final ListCourses course = ListCourses();
 
   @override
   Widget build(BuildContext context) {
