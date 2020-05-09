@@ -77,7 +77,7 @@ class MyCourses extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     new FlatButton(
-                      child: Text("My Registered Coureses"),
+                      child: Text("My Registered Courses"),
                       color: Colors.green,
                       onPressed: (){
 //                    Navigator.push(context, MaterialPageRoute(

@@ -18,8 +18,11 @@ class StudentHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Student List - Tap to select student"),
+        title: Text("Student List - Tap to select"),
         backgroundColor: Colors.green[400],
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.add)),
+        ],
       ),
       backgroundColor: Colors.white,
       body: ListView.builder(
