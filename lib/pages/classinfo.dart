@@ -11,10 +11,12 @@ import 'package:flutterclasses/pages/studenthome.dart';
 
 class ClassInfo extends StatelessWidget {
 
-  final ListCourses courses = ListCourses();
+  final List<Course> courseList = Course.getCourses();
   final String classInfo;
 
   ClassInfo({Key key, this.classInfo}) : super(key: key);
+
+  get courses => null;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class ClassInfo extends StatelessWidget {
 // *************************
 
 class CourseInfo extends StatelessWidget {
-  final Courses courses;
+  final Course courses;
 
   const CourseInfo(course, BuildContext context,  {Key key, this.courses}) : super(key: key);
   @override

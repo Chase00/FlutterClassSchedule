@@ -7,38 +7,25 @@ import 'classinfo.dart';
 // the course info and click on the plus to be
 // enrolled in the course
 
-// ignore: must_be_immutable
+// ignore: must_be_immutabl
 class ClassList extends StatefulWidget {
   @override
   _ClassListState createState() => _ClassListState();
 }
-
 class _ClassListState extends State<ClassList> {
 
-            // Need to fix
-
 //  final String classlist;
-//  ClassList({Key key, this.classlist}) : super(key: key);
+//
+//  const ClassList({Key key, this.classlist}) : super(key: key);
+  final List<Course> courseList = Course.getCourses();
 
-  final ListCourses course = ListCourses();
-
-  int count= 0;
-  addCourse(){setState(() {
-    print('${course.getCourse(count)} Course Added!');
-    count++;
-
-  });}
-  deleteCourse(){setState(() {
-    print('Course ${course.getCourse(count)} Course Deleted!');
-    count--;
-
-  });}
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Class List"), //s
+        title: Text("Course List"), //s
         backgroundColor: Colors.green[400],
       ),
       backgroundColor: Colors.white,
@@ -48,47 +35,62 @@ class _ClassListState extends State<ClassList> {
             return Card(
               elevation: 20,
               color: Colors.white,
-              child: ListTile(
-                leading: Icon(
-                  Icons.assignment,
-                  size: 40,
-                  color: Colors.black54,
-                ),
-                trailing: Wrap(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 50,
-                      width: 30,
-                      child:
-                      IconButton(icon: Icon(Icons.assignment_ind), iconSize: 30, color: Colors.black54,
-                        onPressed: (){},),),
-                    SizedBox(
-                      height: 50,
-                      width: 30,
-                      child:
-                      IconButton(icon: Icon(Icons.add), iconSize: 30, color: Colors.black54,
-                        onPressed: (){},),),
-                    SizedBox(
-                      height: 50,
-                      width: 30,
-                      child:
-                      IconButton(icon: Icon(Icons.delete), iconSize: 30, color: Colors.black54,
-                        onPressed:(){},),
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(
+                      Icons.assignment,
+                      size: 40,
+                      color: Colors.black54,
                     ),
-                  ],
-                ),
-                title: Text(course.getCourse(index)),
-                subtitle: Text(course.getCode(index)),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => ClassInfo(classInfo: course.getCode(index),)));
-                },
+                    trailing: Wrap(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 50,
+                          width: 30,
+                          child:
+                          IconButton(icon: Icon(Icons.assignment_ind), iconSize: 30, color: Colors.black54,
+                            onPressed: (){},),),
+                        SizedBox(
+                          height: 50,
+                          width: 30,
+                          child:
+                          IconButton(icon: Icon(Icons.add), iconSize: 30, color: Colors.black54,
+                            onPressed: (){},
+                          ),),
+                        SizedBox(
+                          height: 50,
+                          width: 30,
+                          child:
+                          IconButton(icon: Icon(Icons.delete), iconSize: 30, color: Colors.black54,
+                            onPressed: (){setState(() {
+                              print('${courseList[index].courseName} Course Deleted!');
+                              courseList.removeAt(index);
+                              count--;
+                            });},),
+                        ),
+                      ],
+                    ),
+                    title: Text('${courseList[index].courseName}'),
+                    subtitle: Text('${courseList[index].courseCode}'),
+
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => ClassInfo(classInfo: courseList[index].courseCode,)));
+                    },
+                  ),
+                ],
               ),
+
             );
           }),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green[400],
-        onPressed: addCourse,
+        onPressed: (){setState(() {
+          print('${courseList[count].courseName} Course Added!');
+          count++;
+
+        });},
         child: Text('+',
           style: new TextStyle(fontSize: 25.0),
         ),
@@ -96,3 +98,5 @@ class _ClassListState extends State<ClassList> {
     );
   }
 }
+
+
