@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterclasses/courses.dart';
+import 'package:flutterclasses/pages/classinfo.dart';
 import 'classinfo.dart';
 
 // List of classes
@@ -76,7 +77,7 @@ class _ClassListState extends State<ClassList> {
 
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => ClassInfo(classInfo: courseList[index].courseCode,)));
+                          builder: (context) => ClassInfo(courseCode: courseList[index].courseCode, courseName: courseList[index].courseName, courseDescription: courseList[index].courseDescription)));
                     },
                   ),
                 ],

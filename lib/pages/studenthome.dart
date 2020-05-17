@@ -18,11 +18,8 @@ class StudentHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Student List - Tap to select"),
+        title: Text("Student List"),
         backgroundColor: Colors.green[400],
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.add)),
-        ],
       ),
       backgroundColor: Colors.white,
       body: ListView.builder(
@@ -37,15 +34,20 @@ class StudentHome extends StatelessWidget {
                     size: 40,
                     color: Colors.black54,
                   ),
-                  trailing: Text(students.getId(index)),
                   title: Text(students.getName(index)),
                   subtitle: Text(students.getMajor(index)),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => MyCourses()));
+                      builder: (context) => MyCourses(student: students.getName(index))));
                   },
+                  trailing: Wrap(
+                  spacing: 12, // space between two icons
+                  children: <Widget>[
+                    Text(students.getId(index)), // icon-1
+                    Icon(Icons.arrow_forward_ios, size: 20, color: Colors.green), // icon-2
+                  ],
                 )
-            );
+            ));
           }),
     );
   }

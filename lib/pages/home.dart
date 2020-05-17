@@ -49,11 +49,11 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 new Text(
-                  "Enter as a student to enroll in classes \n or enter as Faculty to view student body.",
+                  "Enter as a student to enroll in classes and \n               view your current courses.",
                   style: new TextStyle(fontSize:20.0,
-                      color: const Color(0xFF000000),
-                      fontWeight: FontWeight.w200,
-                      fontFamily: "Roboto"),
+                      color: Colors.black,
+                      fontWeight: FontWeight.w300,
+                      fontFamily: "Arial"),
                 ),
               ]
 
@@ -66,11 +66,24 @@ class HomePage extends StatelessWidget {
                 new FlatButton(
                     child: Text("Enter As Student"),
                     color: Colors.green,
+                    textColor: Colors.white,
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(
                           builder: (context) => StudentHome()));
                     },
                 )
+              ]
+          ),
+          new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                new Icon(
+                  Icons.assignment,
+                  color: Colors.grey[350],
+                  size: 250,
+                ),
               ]
           ),
         ]
